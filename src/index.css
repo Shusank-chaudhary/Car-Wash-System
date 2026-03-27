@@ -1,0 +1,101 @@
+/* ================= IMPORT FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ================= TAILWIND DIRECTIVES ================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= BASE VARIABLES ================= */
+@layer base {
+  :root {
+    --background: 210 20% 6%;
+    --foreground: 210 10% 95%;
+
+    --card: 210 18% 10%;
+    --card-foreground: 210 10% 95%;
+
+    --popover: 210 18% 10%;
+    --popover-foreground: 210 10% 95%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 210 20% 4%;
+
+    --secondary: 210 15% 15%;
+    --secondary-foreground: 210 10% 90%;
+
+    --muted: 210 12% 14%;
+    --muted-foreground: 210 10% 55%;
+
+    --accent: 195 90% 60%;
+    --accent-foreground: 210 20% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 12% 18%;
+    --input: 210 12% 18%;
+    --ring: 195 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 210 18% 8%;
+    --sidebar-foreground: 210 10% 90%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 210 20% 4%;
+    --sidebar-accent: 210 15% 16%;
+    --sidebar-accent-foreground: 210 10% 90%;
+    --sidebar-border: 210 12% 18%;
+    --sidebar-ring: 195 100% 50%;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(210 18% 6%) 0%, hsl(200 22% 10%) 50%, hsl(210 18% 6%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%), hsl(195 90% 60%));
+    --shadow-glow: 0 0 40px hsl(195 100% 50% / 0.2);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+
+    --font-heading: 'Bebas Neue', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: 0.02em;
+  }
+}
+
+/* ================= CUSTOM UTILITIES ================= */
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .section-padding {
+    @apply px-4 py-20 md:px-8 lg:px-16 lg:py-28;
+  }
+}
